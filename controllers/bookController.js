@@ -20,6 +20,21 @@ exports.getBookById = async (req, res) => {
 };
 
 exports.createBook = async (req, res) => {
+    /*  #swagger.parameters['body'] = {
+            in: 'body',
+            description: 'Religious text data payload',
+            required: true,
+            schema: {
+                title: "The Book of Mormon",
+                author: "Joseph Smith",
+                publishedYear: 1830,
+                genre: "Religion",
+                isbn: "9780385528080",
+                pages: 531,
+                language: "English",
+                isAvailable: true
+            }
+    } */
     try {
         const newBook = new Book(req.body);
         const savedBook = await newBook.save();
@@ -30,6 +45,21 @@ exports.createBook = async (req, res) => {
 };
 
 exports.updateBook = async (req, res) => {
+    /*  #swagger.parameters['body'] = {
+        in: 'body',
+        description: 'Religious text data payload',
+        required: true,
+        schema: {
+            title: "The Book of Mormon",
+            author: "Joseph Smith",
+            publishedYear: 1830,
+            genre: "Religion",
+            isbn: "9780385528080",
+            pages: 531,
+            language: "English",
+            isAvailable: true
+        }
+    } */
     try {
         const updatedBook = await Book.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if (!updatedBook) return res.status(404).json({ message: 'Book not found' });

@@ -5,7 +5,7 @@
     "description": "API for managing books and authors, fulfilling the CRUD and documentation requirements.",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "",
   "basePath": "/",
   "schemes": [
     "http",
@@ -26,6 +26,51 @@
       },
       "post": {
         "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Religious text data payload",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "The Book of Mormon"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "Joseph Smith"
+                },
+                "publishedYear": {
+                  "type": "number",
+                  "example": 1830
+                },
+                "genre": {
+                  "type": "string",
+                  "example": "Religion"
+                },
+                "isbn": {
+                  "type": "string",
+                  "example": "9780385528080"
+                },
+                "pages": {
+                  "type": "number",
+                  "example": 531
+                },
+                "language": {
+                  "type": "string",
+                  "example": "English"
+                },
+                "isAvailable": {
+                  "type": "boolean",
+                  "example": true
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
             "description": "Created"
@@ -67,6 +112,49 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Religious text data payload",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "example": "The Book of Mormon"
+                },
+                "author": {
+                  "type": "string",
+                  "example": "Joseph Smith"
+                },
+                "publishedYear": {
+                  "type": "number",
+                  "example": 1830
+                },
+                "genre": {
+                  "type": "string",
+                  "example": "Religion"
+                },
+                "isbn": {
+                  "type": "string",
+                  "example": "9780385528080"
+                },
+                "pages": {
+                  "type": "number",
+                  "example": 531
+                },
+                "language": {
+                  "type": "string",
+                  "example": "English"
+                },
+                "isAvailable": {
+                  "type": "boolean",
+                  "example": true
+                }
+              }
+            }
           }
         ],
         "responses": {
